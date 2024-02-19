@@ -1,17 +1,17 @@
-// Home.jsx
 
-import { images } from '../images';
+import imageData from '../images'; 
 
 const Home = () => {
   return (
     <div>
-      <h1>Welcome to the Home Page</h1>
-      <div className="image-container">
-        {images.map(image => (
-          <div key={image.id}>
-            <img src={image.data} alt={image.description} />
-            <p>{image.description}</p>
-          </div>
+      <h1>Images</h1>
+      <div>
+        {imageData.map(image => (
+        <>
+          {console.log(image)}
+          <img key={image.id} src={image.url} alt={image.name} />
+        </>
+         
         ))}
       </div>
     </div>
