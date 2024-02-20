@@ -1,26 +1,31 @@
-// import { Link } from 'react-router-dom';
+import f1 from '../assets/f1.jpg';
+import f2 from '../assets/f2.jpg';
+import f3 from '../assets/f3.jpg';
+import f4 from '../assets/f4.jpg';
+import f5 from '../assets/f5.jpg';
+import f6 from '../assets/f6.jpg';
 
-const Header = () => {
+const images = [f1,f2,f3,f4,f5,f6]
+
+// eslint-disable-next-line react/prop-types
+const Header = ({title,image,type}) => {
   return (
-    // <nav className="bg-black p-4">
-    //   <div className="w-[96%] mx-auto flex items-center justify-between">
-    //     <Link to="/" className="text-white  text-xl font-bold ">
-    //     Movie Reserve
-    //     </Link>
-    //     <div className="flex space-x-4">
-    //       <Link to="/" className="text-white/90 font-[500] hover:text-white mr-8 tracking-wide">
-    //         All Movies
-    //       </Link>
-    //       <Link to="/booked-tickets" className="text-white/90 hover:text-white  tracking-wide mr-4">
-    //         Booked Tickets
-    //       </Link>
-    //     </div>
-    //   </div>
-    // </nav>
-    <div>
-      <h1 className='text-2xl'>hello</h1>
+    <div className="w-full h-[100vh]">
+      <div className="relative w-full h-full">
+          <img src={image ?? images[Math.floor(Math.random() * images.length)]} alt="Recipe" className='w-full h-full object-cover' />
+      </div>
+      <div className='absolute w-full h-full bg-gradient-to-t from-black to-transparent top-0 z-8 flex flex-col items-center justify-center pt-40 2xl:pt-20 px-4 '>
+      <h1 className='text-white text-3xl md:text-4xl font-bold text-center'>{title}</h1>
+      {
+          type && (
+            <p className='text-sm mt-4 text-center text-yellow-500 bg-[#00000090] px-6 py-4 rounded-full '>Welcome to Yum Hunt, your passport to culinary adventures!
+              <br className='hidden md:block' /> Discover a treasure trove of
+              delectable recipes from around the globe.</p>
+          )
+        }
+      </div>
     </div>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

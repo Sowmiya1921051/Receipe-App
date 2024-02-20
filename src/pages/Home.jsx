@@ -1,21 +1,16 @@
-
-import imageData from '../images'; 
+import Header from "../components/Header"
 
 const Home = () => {
   return (
-    <div>
-      <h1>Images</h1>
-      <div>
-        {imageData.map(image => (
-        <>
-          {console.log(image)}
-          <img key={image.id} src={image.url} alt={image.name} />
-        </>
-         
-        ))}
+    <div className="w-full flex flex-col">
+      <Header
+      title={
+        <p>Explore flavorsome delights on Yum Hunt!</p>
+      }  
+      type='home'
+      />
       </div>
-    </div>
-  );
+  )
 }
 
-export default Home;
+export default Home
